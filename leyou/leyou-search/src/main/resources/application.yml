@@ -1,0 +1,27 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.1.106:9300
+  main:
+    allow-bean-definition-overriding: true #多个接口上的@FeignClient(“相同服务名”)会报错：overriding is disabled。 需要设置允许重名
+  jackson:
+    default-property-inclusion: non_null # 过滤掉结果为null的字段
+  rabbitmq:
+    # 可以使用docker来安装搭建rabbitmq的环境
+    host: 192.168.1.106
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15

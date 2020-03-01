@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    virtual-host: /leyou
+    host: 192.168.1.106
+    username: leyou
+    password: leyou
+  mail:
+    password: pocyrmyppveydcfc
+    username: 2980372618@qq.com
+    host: smtp.qq.com
+leyou:
+  sms:
+    # 阿里云服务配置
+    accessKeyId: LTAI4FkGcdovt1a9YYrKQZn5 # 你自己的accessKeyId
+    accessKeySecret: ZSyvYbx1AFhOLQ8pwSro6z8Gxoe5Ij # 你自己的AccessKeySecret
+    signName: 柒玖商城 # 签名名称
+    verifyCodeTemplate: SMS_184206709 # 模板名称
