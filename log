@@ -1,0 +1,29 @@
+目前自己踩的一些坑,希望能有用... 虽然废话比较多
+
+1. 使用的spring boot版本是2.2.4.RELEASE，和视频的不一样。spring cloud的版本会根据自动适配
+	最好是ctrl + 鼠标左键 点击一下每一个依赖 看是否正确导入。
+	
+2. spring boot2.2.4版本使用feign时，多个类标注相同的服务会报异常，需要在application.yml中添加配置：
+	spring:
+	  main:
+		allow-bean-definition-overriding: true 
+		
+3. spring boot2.2.4使用properties属性扩展时，在扩展的属性类上可以额外在添加一个注解：@Component：将属性读取类
+   加载到spring容器中，添加之后可以不用在额外的加载。要是属性配置类上报spring boot Configuration Annotation Proessor not found in classpath，
+   可以在对应的pom.xml中添加一个依赖：
+		 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
+4. 连接myql可能会报时区异常，在mysql连接url信息上添加一些配置（下面设置了编码和时区）
+	spring:
+	  application:
+		name: item-service
+	  datasource:
+		username: root
+		url: jdbc:mysql://localhost:3306/leyou?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+		password: 123456
+		driver-class-name: com.mysql.cj.jdbc.Driver
+
+5. 安装linux的相关软件时 用docker会简单一些，如果是用的docker的话，需要注意指定一下镜像（阿里的会很快）。 国外镜像特别慢...
