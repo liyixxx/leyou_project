@@ -1,5 +1,6 @@
 # MicroserviceMallProject
 使用spring boot和spring cloud搭建的分布式商城项目，涉及到主流的一些分布式技术。
+
 学习地址：https://www.bilibili.com/video/BV1j4411p7UJ?from=search&seid=4090980388649297569
 
    
