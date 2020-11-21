@@ -1,9 +1,10 @@
 # MicroserviceMallProject
-使用spring boot和spring cloud搭建的分布式商城项目，涉及到主流的一些分布式技术
+使用spring boot和spring cloud搭建的分布式商城项目，涉及到主流的一些分布式技术。
+学习地址：https://www.bilibili.com/video/BV1j4411p7UJ?from=search&seid=4090980388649297569
 
    
 ## 1. 系统描述
-   乐优商城是一个基于分布式技术部署的项目，整体采用spring boot和spring cloud来开发，由cloud的各个组件来管理微服务中的各个模块。项目前后端分离，使用restful请求风格。
+   整体采用spring boot和spring cloud来开发，由cloud的各个组件来管理微服务中的各个模块。项目前后端分离，使用restful请求风格。
    系统中会使用到分布式的一些主流技术，包括redis，rabbitmq，elastic search，fast DFS等，借用这些技术来完成特定的业务功能。
 ## 2. 系统功能
 ### 2.1 用户交互界面 
